@@ -1,0 +1,65 @@
+{
+  "name": "fishka-frontend",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:prod": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint && stylelint \"**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
+    "e2e": "ng e2e",
+    "compodoc": "./node_modules/.bin/compodoc -c .compodocrc.json"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~10.2.0",
+    "@angular/common": "~10.2.0",
+    "@angular/compiler": "~10.2.0",
+    "@angular/core": "~10.2.0",
+    "@angular/forms": "~10.2.0",
+    "@angular/platform-browser": "~10.2.0",
+    "@angular/platform-browser-dynamic": "~10.2.0",
+    "@angular/router": "~10.2.0",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1002.0",
+    "@angular/cli": "~10.2.0",
+    "@angular/compiler-cli": "~10.2.0",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^6.0.0",
+    "htmlhint": "^0.14.1",
+    "htmllint": "^0.8.0",
+    "husky": "^4.3.0",
+    "jasmine-core": "~3.6.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~5.0.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.1.0",
+    "protractor": "~7.0.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.18.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "~4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && pretty-quick --staged && npm run test",
+      "pre-push": "npm run lint && pretty-quick --staged && npm run test"
+    }
+  }
+}

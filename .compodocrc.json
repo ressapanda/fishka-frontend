@@ -1,0 +1,9 @@
+{
+  "theme": "gitbook",
+  "name": "Fishka - Frontend",
+  "tsconfig": "./tsconfig.docs.json",
+  "toggleMenuItems": ["all"],
+  "disableSourceCode": false,
+  "disableTemplateTab": false,
+  "hideGenerator": true
+}
