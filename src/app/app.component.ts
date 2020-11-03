@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
  * App Component
  */
 @Component({
-  selector: 'app-root',
+  selector: 'fishka-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

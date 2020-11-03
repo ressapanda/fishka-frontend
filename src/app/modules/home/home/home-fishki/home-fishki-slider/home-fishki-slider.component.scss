@@ -1,0 +1,89 @@
+::ng-deep {
+  .fishki-carousel {
+    position: relative;
+    .ngucarousel {
+      overflow: visible !important;
+    }
+  }
+}
+
+.fishki-carousel {
+  &__points {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 80px 0 0 0;
+    padding: 0 10px;
+
+    &__item {
+      display: block;
+      width: 15px;
+      height: 15px;
+      background-color: #dde0e4;
+      transition: 0.3s all ease;
+      border-radius: 15px;
+      cursor: pointer;
+
+      &--active {
+        background-color: #f53838;
+        width: 45px;
+      }
+
+      &:not(:last-of-type) {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  &__prev,
+  &__next {
+    position: absolute;
+    bottom: -117px;
+    border: 1px solid #f53838;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all ease;
+    cursor: pointer;
+    background-color: transparent;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    ::ng-deep &__svg {
+      display: flex;
+      path {
+        transition: 0.3s all ease;
+      }
+    }
+
+    &:not(:disabled) {
+      &:hover {
+        background-color: #f53838;
+        ::ng-deep .fishki-carousel__prev__svg,
+        ::ng-deep .fishki-carousel__next__svg {
+          path {
+            fill: #fff !important;
+          }
+        }
+      }
+    }
+  }
+
+  &__prev {
+    right: 75px;
+  }
+
+  &__next {
+    right: 0;
+
+    ::ng-deep &__svg {
+      transform: rotate(180deg);
+    }
+  }
+}

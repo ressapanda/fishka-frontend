@@ -1,0 +1,44 @@
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 23px;
+
+  &__logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0b132a;
+    line-height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    &__logo {
+      display: flex;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+      display: block;
+
+      &__link {
+        color: #4f5665;
+        font-size: 1rem;
+        line-height: 1.1875rem;
+        text-decoration: none;
+      }
+
+      &:not(:last-of-type) {
+        margin-right: 40px;
+      }
+    }
+  }
+}
