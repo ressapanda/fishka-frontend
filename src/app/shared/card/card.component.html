@@ -1,0 +1,23 @@
+<div class="fishka" *ngIf="fishka">
+  <div class="fishka__front">
+    <p class="fishka__question">{{ fishka.question }}</p>
+
+    <div class="fishka__footer">
+      <div
+        class="fishka__difficulty"
+        [ngClass]="{
+          'fishka__difficulty--easy': fishka.difficulty === 'e',
+          'fishka__difficulty--intermediate': fishka.difficulty === 'i',
+          'fishka__difficulty--hard': fishka.difficulty === 'h'
+        }"
+      >
+        <svg-icon src="/assets/images/fishka-logo-small.svg" svgClass="fishka__difficulty__svg"></svg-icon>
+        {{ difficulty[fishka.difficulty] }}
+      </div>
+      <div class="fishka__category">
+        <span class="fishka__category__item" *ngIf="fishka.language">{{ fishka.language.name }}</span>
+        <span class="fishka__category__item" *ngIf="fishka.framework">{{ fishka.framework.name }}</span>
+      </div>
+    </div>
+  </div>
+</div>

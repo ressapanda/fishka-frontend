@@ -1,0 +1,23 @@
+<div class="fishki-carousel">
+  <ngu-carousel #fishkiCarousel [dataSource]="questions" [inputs]="carouselConfig">
+    <ngu-tile *nguCarouselDef="let item; let i = index">
+      <fishka-card [fishka]="item"></fishka-card>
+    </ngu-tile>
+
+    <ul class="fishki-carousel__points" NguCarouselPoint>
+      <li
+        class="fishki-carousel__points__item"
+        *ngFor="let i of fishkiCarousel.pointNumbers; let j = index"
+        [class.fishki-carousel__points__item--active]="i == fishkiCarousel.activePoint"
+        (click)="fishkiCarousel.moveTo(j)"
+      ></li>
+    </ul>
+
+    <button NguCarouselPrev class="fishki-carousel__prev" [disabled]="fishkiCarousel.activePoint === 0">
+      <svg-icon src="/assets/icons/arrow-left.svg" svgClass="fishki-carousel__prev__svg"></svg-icon>
+    </button>
+    <button NguCarouselNext class="fishki-carousel__next" [disabled]="fishkiCarousel.isLast">
+      <svg-icon src="/assets/icons/arrow-left.svg" svgClass="fishki-carousel__next__svg"></svg-icon>
+    </button>
+  </ngu-carousel>
+</div>

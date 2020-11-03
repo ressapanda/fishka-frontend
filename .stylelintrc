@@ -21,6 +21,7 @@
     "no-empty-source": null,
     "selector-class-pattern": "[a-z-]+",
     "selector-id-pattern": "[a-z-]+",
+    "length-zero-no-unit": null,
     "selector-max-id": 4,
     "selector-max-universal": 0,
     "selector-type-no-unknown": [

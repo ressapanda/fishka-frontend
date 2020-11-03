@@ -10,6 +10,7 @@ export const environment = {
    * Production
    */
   production: false,
+  apiUrl: 'https://fishka.adrox.xyz/api/',
 };
 
 /*

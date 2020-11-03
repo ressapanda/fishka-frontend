@@ -1,5 +1,14 @@
+@import 'src/styles/fonts.scss';
+@import 'src/styles/buttons.scss';
+@import 'src/styles/grid.scss';
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #fbfbfb;
+  background-color: #fff;
+  font-family: Rubik, sans-serif;
+}
+
+.tile {
+  box-shadow: none !important;
 }

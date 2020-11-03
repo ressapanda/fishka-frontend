@@ -1,0 +1,20 @@
+<div class="home-statistics" *ngIf="statisticsData">
+  <div class="home-statistics__item">
+    <div class="home-statistics__icon">
+      <svg-icon src="/assets/icons/category-icon.svg" svgClass="home-statistics__icon__svg"></svg-icon>
+    </div>
+    <div class="home-statistics__data">
+      <strong class="home-statistics__item__data">{{ statisticsData.categories_count }}+</strong>
+      <h4 class="home-statistics__item__name">Kategorii</h4>
+    </div>
+  </div>
+  <div class="home-statistics__item">
+    <div class="home-statistics__icon">
+      <div class="home-statistics__fishka"></div>
+    </div>
+    <div class="home-statistics__data">
+      <strong class="home-statistics__item__data">{{ statisticsData.questions_count }}+</strong>
+      <h4 class="home-statistics__item__name">Fishek</h4>
+    </div>
+  </div>
+</div>

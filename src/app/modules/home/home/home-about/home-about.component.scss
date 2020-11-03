@@ -1,0 +1,52 @@
+.home-about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__anon {
+    margin-right: 190px;
+    display: inline-block;
+  }
+
+  &__title {
+    font-size: 2.1875rem;
+    line-height: 3.125rem;
+    color: #0b132a;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+  }
+
+  &__content {
+    font-size: 1rem;
+    line-height: 1.875rem;
+    color: #4f5665;
+    margin: 0 0 20px 0;
+  }
+
+  &__list {
+    list-style-type: none;
+    color: #4f5665;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 0.875rem;
+      line-height: 1.875rem;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url('/assets/icons/check-icon.svg');
+        margin-right: 12px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+  }
+}

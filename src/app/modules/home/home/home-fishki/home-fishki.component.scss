@@ -1,0 +1,27 @@
+.home-fishki {
+  padding: 60px 0;
+
+  &__title {
+    color: #0b132a;
+    margin: 0 0 20px 0;
+    font-size: 2.1875rem;
+    line-height: 3.125rem;
+    font-weight: 400;
+    text-align: center;
+
+    strong {
+      display: block;
+      font-weight: 700;
+    }
+  }
+
+  &__content {
+    color: #4f5665;
+    max-width: 555px;
+    width: 100%;
+    margin: 0 auto 70px auto;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.875rem;
+  }
+}
