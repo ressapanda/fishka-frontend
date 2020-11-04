@@ -9,9 +9,9 @@ import { IFishka } from '@core/interfaces/fishka.interface';
 })
 export class CardComponent {
   public difficulty = {
-    e: 'Łatwe pytanie',
-    i: 'Umiarkowane pytanie',
-    h: 'Trudne pytanie',
+    e: 'Łatwe',
+    i: 'Średnie',
+    h: 'Trudne',
   };
 
   @Input() public fishka: IFishka;

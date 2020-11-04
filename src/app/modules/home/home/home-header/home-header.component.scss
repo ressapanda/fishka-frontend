@@ -33,43 +33,7 @@
   &__fishka {
     width: 450px;
     height: 250px;
-    background: #eee radial-gradient(50% 50% at 50% 50%, #e5e5e5 0%, rgba(229, 229, 229, 0) 100%);
-    mix-blend-mode: multiply;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-    border-radius: 4px;
     transform: rotate(-25deg) translate(42px, 34px);
-    position: relative;
-    padding: 20px 16px;
-    box-sizing: border-box;
-
-    &__content {
-      font-size: 1rem;
-      color: #4f5665;
-      line-height: 1.875rem;
-    }
-
-    &__footer {
-      position: absolute;
-      width: 100%;
-      padding: 6px 16px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-weight: 700;
-      bottom: 0;
-      left: 0;
-      font-size: 0.6875rem;
-    }
-
-    &__logo {
-      display: flex;
-      align-items: center;
-      &__svg {
-        display: flex;
-        transform: rotate(25deg);
-      }
-    }
   }
 }
 

@@ -21,7 +21,7 @@ export class HomeFishkiSliderComponent implements OnInit {
     },
     load: 2,
     velocity: 0,
-    touch: true,
+    touch: false,
     easing: 'cubic-bezier(0, 0, 0.2, 1)',
   };
 
