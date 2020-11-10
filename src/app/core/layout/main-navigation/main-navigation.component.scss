@@ -34,6 +34,10 @@
         font-size: 1rem;
         line-height: 1.1875rem;
         text-decoration: none;
+
+        &--active {
+          font-weight: 500;
+        }
       }
 
       &:not(:last-of-type) {

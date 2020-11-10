@@ -1,0 +1,28 @@
+.categories {
+  max-width: 1220px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 20px 100px 20px;
+  margin: 80px auto 0 auto;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 96px;
+
+    &__title {
+      font-size: 3.125rem;
+      line-height: 4.375rem;
+      font-weight: 500;
+      color: #0b132a;
+      margin: 0 0 33px 0;
+    }
+
+    &__description {
+      color: #4f5665;
+      font-size: 1rem;
+      line-height: 1.875rem;
+      max-width: 555px;
+      margin: 0 auto;
+    }
+  }
+}
