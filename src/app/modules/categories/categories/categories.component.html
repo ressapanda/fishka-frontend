@@ -1,0 +1,14 @@
+<section id="categories" class="categories">
+  <header class="categories__header">
+    <h3 class="categories__header__title">Dostępne kategorie</h3>
+    <p class="categories__header__description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum mauris eu ex consequat vehicula.
+    </p>
+  </header>
+
+  <fishka-categories-grid
+    [categories]="categories"
+    [(page)]="paginationOptions.page"
+    [limit]="paginationOptions.limit"
+  ></fishka-categories-grid>
+</section>

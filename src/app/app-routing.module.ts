@@ -12,12 +12,22 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('./modules/home/home.module').then((m) => m.HomeModule),
       },
+      {
+        path: 'categories',
+        loadChildren: () => import('./modules/categories/categories.module').then((m) => m.CategoriesModule),
+      },
     ],
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload', anchorScrolling: 'enabled' })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      onSameUrlNavigation: 'reload',
+      anchorScrolling: 'enabled',
+      scrollPositionRestoration: 'enabled',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

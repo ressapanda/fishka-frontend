@@ -1,0 +1,11 @@
+<div class="categories-grid">
+  <div class="categories-grid__items">
+    <div
+      class="categories-grid__items__item"
+      *ngFor="let category of categories"
+      [attr.data-count]="category.questions_count"
+    >
+      {{ category.name }}
+    </div>
+  </div>
+</div>

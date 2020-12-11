@@ -18,7 +18,7 @@
       "@modules/*": ["src/app/modules/*"],
       "@core/*": ["src/app/core/*"],
       "@env/*": ["src/environments/*"],
-      "@utils/*": ["src/app/utils/*"]
+      "@utils/*": ["src/app/core/utils/*"]
     }
   }
 }

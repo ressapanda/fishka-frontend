@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 
 import { HomeStatisticsComponent } from './home-statistics.component';
 import { HomeService, IStatistics } from '../../home.service';
-import findFirstLess from '@utils/findFirstLess';
+import findFirstLess from '@core/utils/find-first-less';
 import { MockSvgIconComponent } from '../../../../tests/svg-icon.mock.component';
 
 describe('HomeStatisticsComponent', () => {

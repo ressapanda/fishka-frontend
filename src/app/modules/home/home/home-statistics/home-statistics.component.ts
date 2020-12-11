@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import findFirstLess from '@utils/findFirstLess';
+import findFirstLess from '@core/utils/find-first-less';
 import { HomeService, IStatistics } from '../../home.service';
 
 @Component({
