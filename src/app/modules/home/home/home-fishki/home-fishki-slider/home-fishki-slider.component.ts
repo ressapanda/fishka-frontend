@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { NguCarouselConfig } from '@ngu/carousel';
 
 import { HomeService } from '../../../home.service';
@@ -8,6 +8,7 @@ import { IFishka } from '@core/interfaces/fishka.interface';
   selector: 'fishka-home-fishki-slider',
   templateUrl: './home-fishki-slider.component.html',
   styleUrls: ['./home-fishki-slider.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeFishkiSliderComponent implements OnInit {
   public questions: IFishka[] = [];
@@ -25,13 +26,20 @@ export class HomeFishkiSliderComponent implements OnInit {
     easing: 'cubic-bezier(0, 0, 0.2, 1)',
   };
 
-  constructor(public homeService: HomeService) {}
+  constructor(public homeService: HomeService, public cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.getRandomQuestions();
   }
 
   getRandomQuestions() {
-    this.homeService.getRandomQuestions().subscribe((response) => (this.questions = response));
+    this.homeService.getRandomQuestions().subscribe((response) => {
+      this.questions = response;
+      this.cdr.detectChanges();
+    });
+  }
+
+  carouselTileLoad() {
+    this.cdr.detectChanges();
   }
 }

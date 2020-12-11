@@ -3,7 +3,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { NgModule } from '@angular/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
-import { environment } from '../environments/environment';
+import { environment } from '@env/environment';
 
 import { LayoutModule } from '@core/layout/layout.module';
 import { AppRoutingModule } from './app-routing.module';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HomeService } from '../../home.service';
-import { IFishka } from '../../../../core/interfaces/fishka.interface';
+import { IFishka } from '@core/interfaces/fishka.interface';
 
 @Component({
   selector: 'fiskha-home-header',

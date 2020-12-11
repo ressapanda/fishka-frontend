@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import findFirstLess from '@utils/findFirstLess';
 import { HomeService, IStatistics } from '../../home.service';
 
 @Component({
@@ -6,7 +8,7 @@ import { HomeService, IStatistics } from '../../home.service';
   templateUrl: './home-statistics.component.html',
   styleUrls: ['./home-statistics.component.scss'],
 })
-export class HomeStatisticsComponent {
+export class HomeStatisticsComponent implements OnInit {
   public statisticsData: IStatistics;
 
   public statisticsStepper = {
@@ -14,19 +16,14 @@ export class HomeStatisticsComponent {
     categories_count: [5, 10, 15, 30, 50, 80, 100],
   };
 
-  constructor(public homeService: HomeService) {
+  constructor(public homeService: HomeService) {}
+
+  ngOnInit() {
     this.homeService.getStatisticsData().subscribe((statistics: IStatistics) => {
       this.statisticsData = {
-        questions_count: this.findFirstLess(statistics.questions_count, this.statisticsStepper.questions_count),
-        categories_count: this.findFirstLess(statistics.categories_count, this.statisticsStepper.categories_count),
+        questions_count: findFirstLess(statistics.questions_count, this.statisticsStepper.questions_count),
+        categories_count: findFirstLess(statistics.categories_count, this.statisticsStepper.categories_count),
       };
     });
-  }
-
-  findFirstLess(value: number, array: number[]) {
-    return array
-      .sort((a, b) => a - b)
-      .filter((item) => item < value)
-      .reverse()[0];
   }
 }

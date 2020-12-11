@@ -1,5 +1,5 @@
-<div class="fishki-carousel">
-  <ngu-carousel #fishkiCarousel [dataSource]="questions" [inputs]="carouselConfig">
+<div class="fishki-carousel" *ngIf="questions.length > 0">
+  <ngu-carousel #fishkiCarousel [dataSource]="questions" [inputs]="carouselConfig" (carouselLoad)="carouselTileLoad()">
     <ngu-tile *nguCarouselDef="let item; let i = index">
       <fishka-card [fishka]="item"></fishka-card>
     </ngu-tile>
@@ -13,10 +13,10 @@
       ></li>
     </ul>
 
-    <button NguCarouselPrev class="fishki-carousel__prev" [disabled]="fishkiCarousel.activePoint === 0">
+    <button NguCarouselPrev class="fishki-carousel__prev" [class.disabled]="fishkiCarousel.isFirst">
       <svg-icon src="/assets/icons/arrow-left.svg" svgClass="fishki-carousel__prev__svg"></svg-icon>
     </button>
-    <button NguCarouselNext class="fishki-carousel__next" [disabled]="fishkiCarousel.isLast">
+    <button NguCarouselNext class="fishki-carousel__next" [class.disabled]="fishkiCarousel.isLast">
       <svg-icon src="/assets/icons/arrow-left.svg" svgClass="fishki-carousel__next__svg"></svg-icon>
     </button>
   </ngu-carousel>
