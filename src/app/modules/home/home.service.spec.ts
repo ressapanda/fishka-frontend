@@ -87,24 +87,26 @@ describe('HomeService', () => {
     req.flush(mockRandomQuestions);
   });
 
-  it('getRandomQuestions() with data', () => {
-    service.getRandomQuestion().subscribe((res) => {
-      expect(res).toEqual(mockRandomQuestions[0]);
+  describe('getRandomQuestions()', () => {
+    it('with data', () => {
+      service.getRandomQuestion().subscribe((res) => {
+        expect(res).toEqual(mockRandomQuestions[0]);
+      });
+
+      const req = httpMock.expectOne(`${environment.apiUrl}questions/random_list/?limit=1`);
+      expect(req.request.method).toBe('GET');
+      req.flush(mockRandomQuestions);
     });
 
-    const req = httpMock.expectOne(`${environment.apiUrl}questions/random_list/?limit=1`);
-    expect(req.request.method).toBe('GET');
-    req.flush(mockRandomQuestions);
-  });
+    it('without data', () => {
+      service.getRandomQuestion().subscribe((res) => {
+        expect(res).toEqual(null);
+      });
 
-  it('getRandomQuestions() without data', () => {
-    service.getRandomQuestion().subscribe((res) => {
-      expect(res).toEqual(null);
+      const req = httpMock.expectOne(`${environment.apiUrl}questions/random_list/?limit=1`);
+      expect(req.request.method).toBe('GET');
+      req.flush([]);
     });
-
-    const req = httpMock.expectOne(`${environment.apiUrl}questions/random_list/?limit=1`);
-    expect(req.request.method).toBe('GET');
-    req.flush([]);
   });
 
   afterEach(() => {
