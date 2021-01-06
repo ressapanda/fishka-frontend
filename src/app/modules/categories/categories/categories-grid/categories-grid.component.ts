@@ -16,4 +16,8 @@ export class CategoriesGridComponent {
   @Output() public pageChange: EventEmitter<number> = new EventEmitter<number>();
 
   @Input() public limit = 5;
+
+  getQueryParams(category: ICategory) {
+    return { [category.category_type]: category.id };
+  }
 }

@@ -27,7 +27,8 @@ export class QuestionsComponent implements AfterViewInit {
   public totalQuestions = 0;
 
   private filters = {
-    categories: null,
+    framework: null,
+    team: null,
   };
 
   constructor(private qs: QuestionsService, private route: ActivatedRoute, private router: Router) {}

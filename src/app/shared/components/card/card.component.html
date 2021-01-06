@@ -1,5 +1,10 @@
 <div class="fishka__container">
-  <div class="fishka" *ngIf="fishka" [ngClass]="{ 'fishka--flipped': flipped }" (click)="flipCard()">
+  <div
+    class="fishka"
+    *ngIf="fishka"
+    [ngClass]="{ 'fishka--flipped': flipped, 'fishka--no-flip': !config.flip }"
+    (click)="config.flip ? flipCard() : null"
+  >
     <div class="fishka__front">
       <p class="fishka__question">{{ fishka.question }}</p>
 
