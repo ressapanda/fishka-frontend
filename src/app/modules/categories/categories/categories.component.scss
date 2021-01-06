@@ -13,12 +13,12 @@
       font-size: 3.125rem;
       line-height: 4.375rem;
       font-weight: 500;
-      color: #0b132a;
+      color: var(--dark-text-color);
       margin: 0 0 33px 0;
     }
 
     &__description {
-      color: #4f5665;
+      color: var(--light-text-color);
       font-size: 1rem;
       line-height: 1.875rem;
       max-width: 555px;

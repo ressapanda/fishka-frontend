@@ -1,0 +1,25 @@
+<ul class="ui-pagination">
+  <li class="ui-pagination__prev-page" *ngIf="showNavigationControls">
+    <button title="Poprzednia strona" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">
+      &laquo;
+    </button>
+  </li>
+  <li class="ui-pagination__page ui-pagination__page--smaller" *ngIf="currentPage - offset > 1">
+    <button title="Strona 1" (click)="changePage(1)">1</button>
+  </li>
+  <li
+    class="ui-pagination__page"
+    [ngClass]="{ 'ui-pagination__page--active': page === currentPage }"
+    *ngFor="let page of pagesArray"
+  >
+    <button title="Strona {{ page }}" (click)="currentPage !== page ? changePage(page) : null">{{ page }}</button>
+  </li>
+  <li class="ui-pagination__page ui-pagination__page--smaller" *ngIf="pages - offset > currentPage">
+    <button title="Strona {{ pages }}" (click)="changePage(pages)">{{ pages }}</button>
+  </li>
+  <li class="ui-pagination__next-page" *ngIf="showNavigationControls">
+    <button title="Następna strona" (click)="changePage(currentPage + 1)" [disabled]="currentPage === pages">
+      &raquo;
+    </button>
+  </li>
+</ul>

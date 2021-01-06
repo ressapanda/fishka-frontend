@@ -7,7 +7,7 @@
   &__logo {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #0b132a;
+    color: var(--dark-text-color);
     line-height: 1.5rem;
     display: flex;
     align-items: center;
@@ -16,6 +16,26 @@
 
     &__logo {
       display: flex;
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.7;
+
+    &__meat {
+      display: block;
+      width: 32px;
+      height: 4px;
+      background-color: var(--light-text-color);
+      border-radius: 50px;
+      margin: 4px 0;
+      transition: 0.3s all ease;
+      transform-origin: center;
     }
   }
 
@@ -30,7 +50,7 @@
       display: block;
 
       &__link {
-        color: #4f5665;
+        color: var(--light-text-color);
         font-size: 1rem;
         line-height: 1.1875rem;
         text-decoration: none;
@@ -41,7 +61,63 @@
       }
 
       &:not(:last-of-type) {
-        margin-right: 40px;
+        margin: 0 40px 0 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .main-nav {
+    &--showed {
+      .main-nav {
+        &__list {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        &__hamburger {
+          position: fixed;
+          top: 48px;
+          right: 10px;
+          z-index: 31;
+
+          &__meat {
+            &:nth-child(1) {
+              transform: translateY(8px) rotate(45deg);
+            }
+            &:nth-child(2) {
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              transform: translateY(-8px) rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+
+    &__hamburger {
+      display: block;
+    }
+
+    &__list {
+      position: fixed;
+      padding: 20% 20px 0 20px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #fff;
+      z-index: 30;
+      opacity: 0;
+      transform: translateY(-100%);
+      transition: 0.3s all ease-in-out;
+      display: block;
+
+      &__item {
+        text-align: center;
+        margin: 25px 0 !important;
       }
     }
   }

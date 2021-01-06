@@ -1,0 +1,39 @@
+<div class="questions container">
+  <h3 class="questions__title">Lista Fishek</h3>
+  <p class="questions__description">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum mauris eu ex consequat vehicula.
+  </p>
+
+  <table class="questions__table">
+    <thead>
+      <tr>
+        <th class="questions__table__th">Nazwa Fishki</th>
+        <th class="questions__table__th">Kategorie</th>
+        <th class="questions__table__th">Trudność</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="questions__table__tr" *ngFor="let question of questions">
+        <td class="questions__table__td">
+          <a routerLink="/" [title]="question.question" class="questions__table__link">
+            {{ question.question }}
+          </a>
+        </td>
+        <td class="questions__table__td">
+          <span class="questions__item__category" *ngIf="question.language">{{ question.language.name }}</span>
+          <span class="questions__item__category" *ngIf="question.framework">{{ question.framework.name }}</span>
+        </td>
+        <td class="questions__table__td">{{ questionDifficulty[question.difficulty] }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="questions__pagination" *ngIf="questions.length > 0">
+    <ui-pagination
+      [currentPage]="pagination.page"
+      (pageChange)="getQuestions($event)"
+      [totalItems]="totalQuestions"
+      [itemsPerPage]="pagination.limit"
+    ></ui-pagination>
+  </div>
+</div>

@@ -2,10 +2,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
 
-import { IFishka } from '@core/interfaces/fishka.interface';
+import { IQuestion } from '@core/interfaces/question.interface';
 import { HomeService } from '../../home.service';
 import { HomeHeaderComponent } from './home-header.component';
-import { CardComponent } from '@shared/card/card.component';
+import { CardComponent } from '@shared/components/card/card.component';
 import { MockSvgIconComponent } from '../../../../tests/svg-icon.mock.component';
 
 describe('HomeHeaderComponent', () => {
@@ -13,7 +13,7 @@ describe('HomeHeaderComponent', () => {
   let fixture: ComponentFixture<HomeHeaderComponent>;
   let homeService: HomeService;
 
-  const mockFishka: IFishka = {
+  const mockFishka: IQuestion = {
     id: 1,
     question: 'Question',
     answer: 'Answer to question 4',

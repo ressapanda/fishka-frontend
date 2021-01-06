@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@
 import { NguCarouselConfig } from '@ngu/carousel';
 
 import { HomeService } from '../../../home.service';
-import { IFishka } from '@core/interfaces/fishka.interface';
+import { IQuestion } from '@core/interfaces/question.interface';
 
 @Component({
   selector: 'fishka-home-fishki-slider',
@@ -11,7 +11,7 @@ import { IFishka } from '@core/interfaces/fishka.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeFishkiSliderComponent implements OnInit {
-  public questions: IFishka[] = [];
+  public questions: IQuestion[] = [];
 
   public carouselConfig: NguCarouselConfig = {
     grid: { xs: 1, sm: 2, md: 3, lg: 3, xl: 3, all: 0 },

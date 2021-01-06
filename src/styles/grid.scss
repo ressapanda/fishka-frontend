@@ -1,9 +1,11 @@
+@import 'src/styles/config';
+
 .container {
-  max-width: 1140px;
+  max-width: $grid-width;
   width: 100%;
   margin: 0 auto;
   display: block;
   box-sizing: border-box;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
