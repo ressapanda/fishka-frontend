@@ -13,10 +13,20 @@
       ></li>
     </ul>
 
-    <button NguCarouselPrev class="fishki-carousel__prev" [class.disabled]="fishkiCarousel.isFirst">
+    <button
+      NguCarouselPrev
+      class="fishki-carousel__prev"
+      [class.disabled]="fishkiCarousel.isFirst"
+      title="Poprzednia fishka"
+    >
       <svg-icon src="/assets/icons/arrow-left.svg" svgClass="fishki-carousel__prev__svg"></svg-icon>
     </button>
-    <button NguCarouselNext class="fishki-carousel__next" [class.disabled]="fishkiCarousel.isLast">
+    <button
+      NguCarouselNext
+      class="fishki-carousel__next"
+      [class.disabled]="fishkiCarousel.isLast"
+      title="Następna fishka"
+    >
       <svg-icon src="/assets/icons/arrow-left.svg" svgClass="fishki-carousel__next__svg"></svg-icon>
     </button>
   </ngu-carousel>

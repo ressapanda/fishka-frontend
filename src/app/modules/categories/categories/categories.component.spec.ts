@@ -5,6 +5,7 @@ import { CategoriesService } from '@modules/categories/categories.service';
 import { of } from 'rxjs';
 import { mockGetCategoriesResponse } from '@modules/categories/categories.service.spec';
 import { CategoriesGridComponent } from '@modules/categories/categories/categories-grid/categories-grid.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CategoriesComponent', () => {
   let component: CategoriesComponent;
@@ -14,6 +15,7 @@ describe('CategoriesComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [CategoriesComponent, CategoriesGridComponent],
+      imports: [RouterTestingModule],
       providers: [
         {
           provide: CategoriesService,

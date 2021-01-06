@@ -15,6 +15,10 @@ export class QuestionsService {
     return this.http.get<IPaginationResults<IQuestion>>(this.getUrl(), { params });
   }
 
+  get(id: number): Observable<IQuestion> {
+    return this.http.get<IQuestion>(`${this.getUrl()}${id}/`);
+  }
+
   private getUrl() {
     return `${environment.apiUrl}questions/`;
   }

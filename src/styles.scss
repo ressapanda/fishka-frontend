@@ -5,6 +5,7 @@
 :root {
   --dark-text-color: #0b132a;
   --light-text-color: #4f5665;
+  --accent-color: #f53838;
 }
 
 body {
@@ -16,4 +17,10 @@ body {
 
 .tile {
   box-shadow: none !important;
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
 }

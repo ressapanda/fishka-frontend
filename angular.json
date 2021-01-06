@@ -23,7 +23,16 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/manifest.webmanifest",
+              {
+                "glob": "robots.txt",
+                "input": "src/assets",
+                "output": "/"
+              }
+            ],
             "styles": ["./node_modules/normalize.css/normalize.css", "src/styles.scss"],
             "scripts": []
           },

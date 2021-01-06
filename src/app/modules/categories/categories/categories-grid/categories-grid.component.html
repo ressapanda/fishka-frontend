@@ -4,6 +4,11 @@
       class="categories-grid__items__item"
       *ngFor="let category of categories"
       [attr.data-count]="category.questions_count"
+      role="button"
+      aria-pressed="false"
+      tabindex="0"
+      [routerLink]="['/questions']"
+      [queryParams]="getQueryParams(category)"
     >
       {{ category.name }}
     </div>
