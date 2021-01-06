@@ -8,17 +8,23 @@ export const cardDifficulty = {
   h: 'Trudne',
 };
 
+export interface CardConfig {
+  flip: boolean;
+}
+
 @Component({
   selector: 'fishka-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  // TODO Input with config (eg. flippable)
-
   public difficulty = cardDifficulty;
 
   @Input() public flipped = false;
+
+  @Input() public config: CardConfig = {
+    flip: true,
+  };
 
   @Output() public flippedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 

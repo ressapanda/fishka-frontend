@@ -15,7 +15,7 @@
     <tbody>
       <tr class="questions__table__tr" *ngFor="let question of questions">
         <td class="questions__table__td">
-          <a routerLink="/" [title]="question.question" class="questions__table__link">
+          <a [routerLink]="[question.id]" [title]="question.question" class="questions__table__link">
             {{ question.question }}
           </a>
         </td>

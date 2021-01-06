@@ -6,6 +6,10 @@
   cursor: pointer;
   transition: transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
+  &--no-flip {
+    cursor: default;
+  }
+
   &__container {
     position: relative;
     width: 100%;
@@ -37,7 +41,8 @@
     transform: rotateY(180deg);
   }
 
-  &__question {
+  &__question,
+  &__answer {
     font-size: 1rem;
     color: var(--light-text-color);
     line-height: 1.875rem;

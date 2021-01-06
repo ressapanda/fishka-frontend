@@ -11,4 +11,13 @@
     [(page)]="paginationOptions.page"
     [limit]="paginationOptions.limit"
   ></fishka-categories-grid>
+
+  <div class="categories__pagination">
+    <ui-pagination
+      [currentPage]="paginationOptions.page"
+      (pageChange)="getCategories($event)"
+      [totalItems]="totalCategories"
+      [itemsPerPage]="paginationOptions.limit"
+    ></ui-pagination>
+  </div>
 </section>

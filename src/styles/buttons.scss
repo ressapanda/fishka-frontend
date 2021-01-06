@@ -1,7 +1,7 @@
 @import 'src/styles/config';
 
 .button {
-  background-color: $primary-color;
+  background-color: var(--accent-color);
   color: #fff;
   font-family: $font-family;
   padding: 17px 60px;
@@ -26,7 +26,7 @@
       left: 50%;
       top: 32%;
       transform: translate(-50%, 0);
-      background-color: $primary-color;
+      background-color: var(--accent-color);
       filter: blur(30px);
       border-radius: 10px;
       z-index: -1;
