@@ -1,10 +1,10 @@
 import { HomeService, IStatistics } from '@modules/home/home.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { getTestBed, TestBed } from '@angular/core/testing';
-import { IFishka } from '@core/interfaces/fishka.interface';
+import { IQuestion } from '@core/interfaces/question.interface';
 import { environment } from '@env/environment';
 
-const mockRandomQuestions: IFishka[] = [
+const mockRandomQuestions: IQuestion[] = [
   {
     id: 6,
     question: 'Question6',

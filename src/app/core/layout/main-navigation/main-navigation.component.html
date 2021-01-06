@@ -1,15 +1,19 @@
-<nav class="main-nav container">
+<nav class="main-nav container" #nav>
   <a routerLink="/" class="main-nav__logo" title="Strona główna">
     <svg-icon src="/assets/images/fishka-logo.svg" svgClass="main-nav__logo__svg"></svg-icon>
     Fishka
   </a>
+  <button title="Toggle menu" class="main-nav__hamburger" (click)="nav.classList.toggle('main-nav--showed')">
+    <span class="main-nav__hamburger__meat"></span>
+    <span class="main-nav__hamburger__meat"></span>
+    <span class="main-nav__hamburger__meat"></span>
+  </button>
   <ol class="main-nav__list">
     <li class="main-nav__list__item">
       <a
         class="main-nav__list__item__link"
         routerLinkActive="main-nav__list__item__link--active"
-        routerLink="/"
-        [routerLinkActiveOptions]="{ exact: true }"
+        routerLink="/questions"
         title="Fishki"
         >Fishki</a
       >

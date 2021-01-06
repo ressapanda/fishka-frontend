@@ -2,6 +2,11 @@
 @import 'src/styles/buttons.scss';
 @import 'src/styles/grid.scss';
 
+:root {
+  --dark-text-color: #0b132a;
+  --light-text-color: #4f5665;
+}
+
 body {
   margin: 0;
   padding: 0;

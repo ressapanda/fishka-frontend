@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { CardComponent } from '@shared/card/card.component';
-import { IFishka } from '@core/interfaces/fishka.interface';
-import { MockSvgIconComponent } from '../../tests/svg-icon.mock.component';
+import { CardComponent } from '@shared/components/card/card.component';
+import { IQuestion } from '@core/interfaces/question.interface';
+import { MockSvgIconComponent } from '../../../tests/svg-icon.mock.component';
 
-const mockCard: IFishka = {
+const mockCard: IQuestion = {
   id: 7,
   question: 'Question7',
   answer: 'Answer to question 7',

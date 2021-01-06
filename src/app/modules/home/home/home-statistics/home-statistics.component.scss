@@ -37,7 +37,7 @@
     &__data {
       font-size: 1.5625rem;
       font-weight: 700;
-      color: #0b132a;
+      color: var(--dark-text-color);
       line-height: 1.875rem;
       display: block;
       margin-bottom: 5px;
@@ -45,7 +45,7 @@
 
     &__name {
       font-weight: 400;
-      color: #4f5665;
+      color: var(--light-text-color);
       font-size: 1.25rem;
       line-height: 1.875rem;
       margin: 0;

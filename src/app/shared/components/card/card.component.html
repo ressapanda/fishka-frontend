@@ -1,7 +1,19 @@
-<div class="fishka" *ngIf="fishka">
-  <div class="fishka__front">
-    <p class="fishka__question">{{ fishka.question }}</p>
+<div class="fishka__container">
+  <div class="fishka" *ngIf="fishka" [ngClass]="{ 'fishka--flipped': flipped }" (click)="flipCard()">
+    <div class="fishka__front">
+      <p class="fishka__question">{{ fishka.question }}</p>
 
+      <ng-container *ngTemplateOutlet="fishkaFooter; context: { fishka: fishka }"></ng-container>
+    </div>
+    <div class="fishka__back">
+      <p class="fishka__answer">
+        {{ fishka.answer }}
+      </p>
+      <ng-container *ngTemplateOutlet="fishkaFooter; context: { fishka: fishka }"></ng-container>
+    </div>
+  </div>
+
+  <ng-template #fishkaFooter let-fishka="fishka">
     <div class="fishka__footer">
       <div
         class="fishka__difficulty"
@@ -19,5 +31,5 @@
         <span class="fishka__category__item" *ngIf="fishka.framework">{{ fishka.framework.name }}</span>
       </div>
     </div>
-  </div>
+  </ng-template>
 </div>

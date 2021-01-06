@@ -109,6 +109,41 @@
           }
         }
       }
+    },
+    "ui-pagination": {
+      "projectType": "library",
+      "root": "projects/ui-pagination",
+      "sourceRoot": "projects/ui-pagination/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ui-pagination/tsconfig.lib.json",
+            "project": "projects/ui-pagination/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-pagination/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ui-pagination/src/test.ts",
+            "tsConfig": "projects/ui-pagination/tsconfig.spec.json",
+            "karmaConfig": "projects/ui-pagination/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["projects/ui-pagination/tsconfig.lib.json", "projects/ui-pagination/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "defaultProject": "fishka-frontend"

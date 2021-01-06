@@ -2,11 +2,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
 import { HomeFishkiSliderComponent } from './home-fishki-slider.component';
-import { IFishka } from '@core/interfaces/fishka.interface';
+import { IQuestion } from '@core/interfaces/question.interface';
 import { HomeService } from '@modules/home/home.service';
 import { MockSvgIconComponent } from '../../../../../tests/svg-icon.mock.component';
 import { NguCarouselModule } from '@ngu/carousel';
-import { CardComponent } from '@shared/card/card.component';
+import { CardComponent } from '@shared/components/card/card.component';
 import { By } from '@angular/platform-browser';
 import { ChangeDetectorRef } from '@angular/core';
 
@@ -15,7 +15,7 @@ describe('HomeFishkiSlider', () => {
   let fixture: ComponentFixture<HomeFishkiSliderComponent>;
   let homeService: HomeService;
 
-  const mockRandomQuestions: IFishka[] = [
+  const mockRandomQuestions: IQuestion[] = [
     {
       id: 6,
       question: 'Question6',

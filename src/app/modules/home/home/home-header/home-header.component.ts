@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HomeService } from '../../home.service';
-import { IFishka } from '@core/interfaces/fishka.interface';
+import { IQuestion } from '@core/interfaces/question.interface';
 
 @Component({
   selector: 'fiskha-home-header',
@@ -9,11 +9,11 @@ import { IFishka } from '@core/interfaces/fishka.interface';
   styleUrls: ['./home-header.component.scss'],
 })
 export class HomeHeaderComponent implements OnInit {
-  public randomCard: IFishka = null;
+  public randomCard: IQuestion = null;
 
   constructor(public homeService: HomeService) {}
 
   ngOnInit(): void {
-    this.homeService.getRandomQuestion().subscribe((response: IFishka) => (this.randomCard = response));
+    this.homeService.getRandomQuestion().subscribe((response: IQuestion) => (this.randomCard = response));
   }
 }
