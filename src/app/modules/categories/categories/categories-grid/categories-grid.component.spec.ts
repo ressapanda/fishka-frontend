@@ -4,6 +4,7 @@ import { CategoriesService } from '@modules/categories/categories.service';
 import { CategoriesGridComponent } from './categories-grid.component';
 import { mockGetCategoriesResponse } from '@modules/categories/categories.service.spec';
 import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CategoriesGridComponent', () => {
   let component: CategoriesGridComponent;
@@ -12,6 +13,7 @@ describe('CategoriesGridComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [CategoriesGridComponent],
+      imports: [RouterTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CategoriesGridComponent);
