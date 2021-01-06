@@ -35,7 +35,7 @@ jobs:
           run: npm run build:prod
           
         - name: Test
-          run: xvfb-run --auto-servernum npm run test 
+          run: xvfb-run --auto-servernum npm run test -- --watch=false --code-coverage
           env:
             CI: true
 
