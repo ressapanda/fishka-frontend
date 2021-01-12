@@ -19,7 +19,8 @@
       "@env/*": ["src/environments/*"],
       "@utils/*": ["src/app/core/utils/*"],
       "@libs/*": ["projects/*"],
-      "ui-pagination": ["dist/ui-pagination/ui-pagination", "dist/ui-pagination"]
+      "ui-pagination": ["dist/ui-pagination/ui-pagination", "dist/ui-pagination"],
+      "ui-loader": ["dist/ui-loader/ui-loader", "dist/ui-loader"]
     }
   }
 }
