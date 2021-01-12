@@ -1,6 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { take } from 'rxjs/operators';
+import { take, tap } from 'rxjs/operators';
 
 import { cleanObject } from '@utils/clean-object';
 import { parsePaginationQuery } from '@utils/parse-pagination-query';
@@ -8,6 +8,7 @@ import { IQuestion } from '@core/interfaces/question.interface';
 import { IPaginationResults } from '@core/interfaces/pagination-results';
 import { QuestionsService } from '@shared/services/questions.service';
 import { cardDifficulty } from '@shared/components/card/card.component';
+import { LoaderService } from '@shared/services/loader.service';
 
 @Component({
   selector: 'fishka-questions',
@@ -31,7 +32,12 @@ export class QuestionsComponent implements AfterViewInit {
     team: null,
   };
 
-  constructor(private qs: QuestionsService, private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    public loaderService: LoaderService,
+    private qs: QuestionsService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngAfterViewInit() {
     this.route.queryParams.pipe(take(1)).subscribe((queryParams: Params) => {
@@ -53,6 +59,8 @@ export class QuestionsComponent implements AfterViewInit {
   getQuestions(page: number = this.pagination.page) {
     this.pagination.page = page;
 
+    this.loaderService.showLoader();
+
     // Change query params
     this.router.navigate([], {
       relativeTo: this.route,
@@ -60,10 +68,13 @@ export class QuestionsComponent implements AfterViewInit {
       queryParamsHandling: 'merge',
     });
 
-    this.qs.getAll(this.params).subscribe((response: IPaginationResults<IQuestion>) => {
-      this.questions = response.results;
-      this.totalQuestions = response.count;
-    });
+    this.qs
+      .getAll(this.params)
+      .pipe(tap(() => this.loaderService.hideLoader()))
+      .subscribe((response: IPaginationResults<IQuestion>) => {
+        this.questions = response.results;
+        this.totalQuestions = response.count;
+      });
   }
 
   private get params() {
