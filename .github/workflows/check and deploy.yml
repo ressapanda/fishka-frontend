@@ -44,7 +44,7 @@ jobs:
         run: |
           pwd
           ls -R $GITHUB_WORKSPACE/
-          npx -p check-code-coverage set-gh-status
+          npx -p check-code-coverage set-gh-status --from $GITHUB_WORKSPACE/coverage/coverage-summary.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
