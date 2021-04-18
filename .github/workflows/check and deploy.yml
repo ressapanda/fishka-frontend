@@ -46,7 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update code coverage badge 🥇
-        run: npx update-badge
+        run: npx -p check-code-coverage update-badge
 
   build_container:
     name: Build and publish container
