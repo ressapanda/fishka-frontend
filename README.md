@@ -1,4 +1,4 @@
-# Fishka-Frontend
+# Fishka-Frontend ![check-code-coverage](https://img.shields.io/badge/code--coverage-95%25-brightgreen)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
