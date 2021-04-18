@@ -41,12 +41,12 @@ jobs:
           CI: true
 
       - name: Set code coverage commit status 📫
-        run: npx -p check-code-coverage set-gh-status --from $GITHUB_WORKSPACE/coverage/fishka-frontend/coverage-summary.json
+        run: npx -p check-code-coverage set-gh-status
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update code coverage badge 🥇
-        run: npx update-badge --from $GITHUB_WORKSPACE/coverage/fishka-frontend/coverage-summary.json
+        run: npx update-badge
 
   build_container:
     name: Build and publish container
