@@ -41,7 +41,10 @@ jobs:
           CI: true
 
       - name: Set code coverage commit status 📫
-        run: npx -p check-code-coverage set-gh-status
+        run: |
+          pwd
+          ls -R $GITHUB_WORKSPACE/
+          npx -p check-code-coverage set-gh-status
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
