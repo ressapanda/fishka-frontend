@@ -40,12 +40,6 @@ jobs:
         env:
           CI: true
 
-      - name: Upload Coverage
-        uses: actions/upload-artifact@2
-        with:
-          name: coverage
-          path: coverage
-
       - name: Set code coverage commit status 📫
         run: npx -p check-code-coverage set-gh-status --from coverage/fishka-frontend/coverage-summary.json
         env:
