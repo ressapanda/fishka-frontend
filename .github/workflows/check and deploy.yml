@@ -41,7 +41,7 @@ jobs:
           CI: true
 
       - name: Check code coverage
-        run: npx -p check-code-coverage check-total --min=99
+        run: npx -p check-code-coverage check-total --min=80
 
       - name: Set code coverage commit status 📫
         run: |
