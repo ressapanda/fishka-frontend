@@ -40,6 +40,9 @@ jobs:
         env:
           CI: true
 
+      - name: Check code coverage
+        run: npx -p check-code-coverage check-total --min=99
+
       - name: Set code coverage commit status 📫
         run: |
           npx -p check-code-coverage set-gh-status --from $GITHUB_WORKSPACE/coverage/coverage-summary.json
